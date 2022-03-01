@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
+import Trending from './Trending';
+import SearchBar from './SearchBar';
 
 // Notes & Todos
 /* 
 The recent activity:
 - [x]  listening to the user's input and assigning it to the URL query
 - [x]  Figure out a performant way to handle the search logic
-- [x] Update the fetch query and the UI accordingly
-- []  implement handleKeyPress() on button and empty the input value after fetch
-- []  Extract the code base and props handling 
+- [x]  Update the fetch query and the UI accordingly
+- [x]   First try of understanding default export VS just export FAILED! do some research
+- [x]  Empty the input value after fetch 
+- [x]  use react-query to fetch, add cache, and extand the application functionalities
+- [x]  Extract the codebase and props handling 
+- []   Implement handleKeyPress() on button 
 - []  Create some cool animation and better overall UX and UI Design; 
       * What's on my mind, when the app renders the content animates to the center, then
         - the user focuses the input, the container pops up and the backgrounds blurs,
@@ -18,6 +23,7 @@ The recent activity:
 function Gifs() {
   const [deeDs, setDeeDs] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [page, setPage] = useState();
 
   async function fetchGifs() {
     const response = await fetch(
@@ -26,7 +32,7 @@ function Gifs() {
     const result = await response.json();
 
     setDeeDs(result.data);
-    console.log('called', deeDs);
+    setSearchTerm('');
   }
 
   return (
@@ -40,27 +46,28 @@ function Gifs() {
         </span>
       </div>
       <div className="call-to-action">
-        <input
-          className="searchBar"
-          type="text"
-          value={searchTerm}
-          placeholder="What are you trolling about?"
-          required
-          onChange={(event) => setSearchTerm(event.target.value)}
-        />
-
-        <button onClick={fetchGifs}>Search</button>
+        <button onClick={() => setPage('Search')}>Search</button>
+        <button onClick={() => setPage('Trending')}>Trending</button>
       </div>
-      <div className="gifs-wrapper">
-        {deeDs.map((GIF) => {
-          return (
-            <div className="gif-card" key={GIF.id}>
-              <img className="gif" src={GIF.images.original.webp} alt="" />
-              <h4 className="gif-title">{GIF.title}</h4>
-            </div>
-          );
-        })}
-      </div>
+      {page === 'Trending' && <Trending />}
+      {page === 'Search' && (
+        <>
+          <div className="call-to-action">
+            <SearchBar setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
+            <button onClick={fetchGifs}>Search</button>
+          </div>
+          <div className="gifs-wrapper">
+            {deeDs.map((GIF) => {
+              return (
+                <div className="gif-card" key={GIF.id}>
+                  <img className="gif" src={GIF.images.original.webp} alt="" />
+                  <h4 className="gif-title">{GIF.title}</h4>
+                </div>
+              );
+            })}
+          </div>
+        </>
+      )}
     </>
   );
 }

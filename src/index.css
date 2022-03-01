@@ -39,7 +39,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin: 2rem 0;
 }
 
 .call-to-action-text {
@@ -58,10 +58,10 @@ span > p {
 .call-to-action > button {
   background-color: inherit;
   outline: 2px solid #ff917e;
-  padding: 0.7rem 1rem;
+  padding: 0.5rem 0.8rem;
   margin-left: 1rem;
   color: slateblue;
-  font: 600 1em var(--primary-font);
+  font: 600 0.8em var(--primary-font);
   border: none;
   cursor: pointer;
   border-radius: 0.5rem;

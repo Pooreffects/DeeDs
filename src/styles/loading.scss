@@ -1,0 +1,59 @@
+$loading-dot-size: 25px;
+.loading__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  text-align: center;
+}
+
+// Loading Dots
+// ---
+
+.loading {
+  margin: 1rem;
+  display: inline-block;
+  width: $loading-dot-size;
+  height: $loading-dot-size;
+  border-radius: $loading-dot-size / 2;
+
+  opacity: 0;
+  background-color: slateblue;
+
+  transform: scale(0);
+}
+
+// Settings for loading dots
+// ---
+
+$loadingCount: 3;
+$iterate: 1;
+$pulseSpeed: 1.4s;
+$pulseDelay: 0.2s;
+$pulseDelayOffset: 0.7s;
+
+@while $iterate <= $loadingCount {
+  .loading:nth-child(#{$iterate}) {
+    animation: pulse $pulseSpeed $pulseDelay infinite linear;
+  }
+
+  // Setting variable count for next iteration
+  $pulseDelay: $pulseDelay + $pulseDelayOffset;
+  $iterate: $iterate + 1;
+}
+
+// Animations
+// ---
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+  35% {
+    opacity: 0.2;
+    transform: scale(0);
+  }
+}
