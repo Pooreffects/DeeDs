@@ -12,8 +12,10 @@ The recent activity:
 - [x]  Empty the input value after fetch 
 - [x]  use react-query to fetch, add cache, and extand the application functionalities
 - [x]  Extract the codebase and props handling 
+- []   You know, underline the home buttons on hover or some shit
+- []   Implement the download functionality with a down arrow from MUI
 - []   Implement handleKeyPress() on button 
-- []  Create some cool animation and better overall UX and UI Design; 
+- []   Create some cool animation and better overall UX and UI Design; 
       * What's on my mind, when the app renders the content animates to the center, then
         - the user focuses the input, the container pops up and the backgrounds blurs,
         - the user clicks Search, the div slides up and the cards kinda like slide in animation
