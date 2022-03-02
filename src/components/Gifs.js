@@ -1,26 +1,7 @@
 import React, { useState } from 'react';
 import Trending from './Trending';
 import SearchBar from './SearchBar';
-
-// Notes & Todos
-/* 
-The recent activity:
-- [x]  listening to the user's input and assigning it to the URL query
-- [x]  Figure out a performant way to handle the search logic
-- [x]  Update the fetch query and the UI accordingly
-- [x]   First try of understanding default export VS just export FAILED! do some research
-- [x]  Empty the input value after fetch 
-- [x]  use react-query to fetch, add cache, and extand the application functionalities
-- [x]  Extract the codebase and props handling 
-- []   You know, underline the home buttons on hover or some shit
-- []   Implement the download functionality with a down arrow from MUI
-- []   Implement handleKeyPress() on button 
-- []   Create some cool animation and better overall UX and UI Design; 
-      * What's on my mind, when the app renders the content animates to the center, then
-        - the user focuses the input, the container pops up and the backgrounds blurs,
-        - the user clicks Search, the div slides up and the cards kinda like slide in animation
-
-*/
+import '../styles/link.scss';
 
 function Gifs() {
   const [deeDs, setDeeDs] = useState([]);
@@ -48,8 +29,14 @@ function Gifs() {
         </span>
       </div>
       <div className="call-to-action">
-        <button onClick={() => setPage('Search')}>Search</button>
-        <button onClick={() => setPage('Trending')}>Trending</button>
+        <div className="btn">
+          <button className="link" onClick={() => setPage('Trending')}>
+            Trending
+          </button>
+          <button className="link" onClick={() => setPage('Search')}>
+            Search
+          </button>
+        </div>
       </div>
       {page === 'Trending' && <Trending />}
       {page === 'Search' && (
