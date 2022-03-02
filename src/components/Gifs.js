@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Trending from './Trending';
 import SearchBar from './SearchBar';
 import '../styles/link.scss';
+import Download from './Download';
 
 function Gifs() {
   const [deeDs, setDeeDs] = useState([]);
@@ -48,9 +49,10 @@ function Gifs() {
           <div className="gifs-wrapper">
             {deeDs.map((GIF) => {
               return (
-                <div className="gif-card" key={GIF.id}>
-                  <img className="gif" src={GIF.images.original.webp} alt="" />
+                <div className="hvr-float-shadow gif-card" key={GIF.id}>
+                  <img className="gif" src={GIF.images.original.url} alt="" />
                   <h4 className="gif-title">{GIF.title}</h4>
+                  <Download GIF={GIF} />
                 </div>
               );
             })}

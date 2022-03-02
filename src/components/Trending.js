@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import Download from './Download';
 import Loading from './Loading';
 
 const fetchTrending = async () => {
@@ -11,21 +12,19 @@ const fetchTrending = async () => {
 
 function Trending() {
   const { data, status } = useQuery('trending', fetchTrending);
+
   return (
     <div>
       {status === 'loading' && <Loading />}
       {status === 'error' && <div>Error fetching data!</div>}
       {status === 'success' && (
         <div className="gifs-wrapper">
-          {data.data.map((trendingGif) => {
+          {data.data.map((GIF) => {
             return (
-              <div className="gif-card" key={trendingGif.id}>
-                <img
-                  className="gif"
-                  src={trendingGif.images.original.webp}
-                  alt=""
-                />
-                <h4 className="gif-title">{trendingGif.title}</h4>
+              <div className="gif-card" key={GIF.id}>
+                <img className="gif" src={GIF.images.original.webp} alt="" />
+                <h4 className="gif-title">{GIF.title}</h4>
+                <Download GIF={GIF} />
               </div>
             );
           })}

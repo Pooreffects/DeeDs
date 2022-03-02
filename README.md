@@ -10,11 +10,12 @@
 - [x] use react-query to fetch, add cache, and extand the application functionalities
 - [x] Extract the codebase and props handling
 - [x] You know, underline the home buttons on hover or some shit
+- [x] Implement the download functionality with MUI-icons => check if the file-saver returns status
 - [ ] Work on the cross browser and cross platform responsiveness (layout,...etc)
-- [ ] Implement the download functionality with a down arrow from MUI
-- [ ] Implement handleKeyPress() on button
+- [ ] Implement "ENTER" handleKeyPress() on button
 - [ ] Maybe convert the stylesheets to SASS
 - [ ] Create some cool animation and better overall UX and UI Design
+- [ ] Deploy the application and try the performance in production
       (keep in mind => transition, animation, and overall app performance);
 
 ```
