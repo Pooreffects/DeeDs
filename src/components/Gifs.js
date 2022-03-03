@@ -9,6 +9,8 @@ function Gifs() {
   const [searchTerm, setSearchTerm] = useState('');
   const [page, setPage] = useState();
 
+  // Fetch data using fetch API, maybe convert it to react-query later
+
   async function fetchGifs() {
     const response = await fetch(
       `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&limit=24&q=${searchTerm}`
@@ -18,6 +20,12 @@ function Gifs() {
     setDeeDs(result.data);
     setSearchTerm('');
   }
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      fetchGifs();
+    }
+  };
 
   return (
     <>
@@ -43,7 +51,11 @@ function Gifs() {
       {page === 'Search' && (
         <>
           <div className="call-to-action">
-            <SearchBar setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
+            <SearchBar
+              setSearchTerm={setSearchTerm}
+              searchTerm={searchTerm}
+              handleKeyPress={handleKeyPress}
+            />
             <button onClick={fetchGifs}>Search</button>
           </div>
           <div className="gifs-wrapper">

@@ -1,4 +1,4 @@
-const SearchBar = ({ setSearchTerm, searchTerm }) => {
+const SearchBar = ({ setSearchTerm, searchTerm, handleKeyPress }) => {
   return (
     <div>
       <input
@@ -8,6 +8,7 @@ const SearchBar = ({ setSearchTerm, searchTerm }) => {
         placeholder="What are you trolling about?"
         required
         onChange={(event) => setSearchTerm(event.target.value)}
+        onKeyPress={handleKeyPress}
       />
     </div>
   );

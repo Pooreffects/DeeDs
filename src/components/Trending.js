@@ -11,6 +11,7 @@ const fetchTrending = async () => {
 };
 
 function Trending() {
+  // Fetch data using react-query
   const { data, status } = useQuery('trending', fetchTrending);
 
   return (
