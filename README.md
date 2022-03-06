@@ -12,9 +12,13 @@
 - [x] You know, underline the home buttons on hover or some shit
 - [x] Implement the download functionality with MUI-icons => check if the file-saver returns status
 - [x] Implement "ENTER" handleKeyPress() on button
+- [x] Create some cool animation and better overall UX and UI Design
+- [x] Create a fun favicon
+- [ ] Implement SEO best practices
 - [ ] Work on the responsiveness media queries file and brush up on the Net Ninja series
+- [ ] Lazy load GIF cards, for optimization and better performance
 - [ ] convert fetch searched GIFs to use React-query as well (analyze the diff between it & Fetch API)
-- [ ] Create some cool animation and better overall UX and UI Design
+- [ ] Extract Styles in dedicated files, maybe even a SASS conversion, since it is installed
 - [ ] Deploy the application and try the performance in production
       (keep in mind => transition, animation, and overall app performance);
 

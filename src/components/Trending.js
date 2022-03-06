@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import Download from './Download';
 import Loading from './Loading';
+import { motion } from 'framer-motion';
 
 const fetchTrending = async () => {
   const response = await fetch(
@@ -22,11 +23,32 @@ function Trending() {
         <div className="gifs-wrapper">
           {data.data.map((GIF) => {
             return (
-              <div className="gif-card" key={GIF.id}>
+              <motion.div
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                variants={{
+                  initial: {
+                    opacity: 0,
+                    y: 100,
+                  },
+                  animate: {
+                    opacity: 1,
+                    y: 0,
+                  },
+                  exit: {
+                    opacity: 0,
+                    y: -100,
+                  },
+                }}
+                transition={{ transition: 'ease', duration: 0.8 }}
+                className="gif-card"
+                key={GIF.id}
+              >
                 <img className="gif" src={GIF.images.original.webp} alt="" />
                 <h4 className="gif-title">{GIF.title}</h4>
                 <Download GIF={GIF} />
-              </div>
+              </motion.div>
             );
           })}
         </div>
