@@ -14,13 +14,14 @@
 - [x] Implement "ENTER" handleKeyPress() on button
 - [x] Create some cool animation and better overall UX and UI Design
 - [x] Create a fun favicon
+- [x] Lazyload GIFs, note: i've implemented it with [react-lazy](https://github.com/Aljullu/react-lazy-load-image-component)
 - [ ] Implement SEO best practices
 - [ ] Work on the responsiveness media queries file and brush up on the Net Ninja series
-- [ ] Lazy load GIF cards, for optimization and better performance
 - [ ] convert fetch searched GIFs to use React-query as well (analyze the diff between it & Fetch API)
 - [ ] Extract Styles in dedicated files, maybe even a SASS conversion, since it is installed
 - [ ] Deploy the application and try the performance in production
       (keep in mind => transition, animation, and overall app performance);
+- [ ] I might as well create a performant component library and push it npm
 
 ```
 * What's on my mind, when the app renders the content animates to the center, then

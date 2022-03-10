@@ -25,7 +25,7 @@ function Gifs() {
 
   async function fetchGifs() {
     const response = await fetch(
-      `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&limit=24&q=${searchTerm}`
+      `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&limit=36&q=${searchTerm}`
     );
     const result = await response.json();
 
@@ -97,6 +97,7 @@ function Gifs() {
           </motion.button>
         </div>
       </div>
+
       {page === 'Trending' && <Trending />}
       {page === 'Search' && (
         <>
@@ -121,39 +122,27 @@ function Gifs() {
               searchTerm={searchTerm}
               handleKeyPress={handleKeyPress}
             />
+
             <button onClick={fetchGifs}>Search</button>
           </motion.div>
           <div className="gifs-wrapper">
-            {deeDs.map((GIF) => {
-              return (
-                <motion.div
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                  variants={{
-                    initial: {
-                      opacity: 0,
-                      y: 50,
-                    },
-                    animate: {
-                      opacity: 1,
-                      y: 0,
-                    },
-                    exit: {
-                      opacity: 0,
-                      y: -50,
-                    },
-                  }}
-                  transition={{ transition: 'ease', duration: 0.8 }}
-                  className="hvr-float-shadow gif-card"
-                  key={GIF.id}
-                >
-                  <img className="gif" src={GIF.images.original.url} alt="" />
-                  <h4 className="gif-title">{GIF.title}</h4>
-                  <Download GIF={GIF} />
-                </motion.div>
-              );
-            })}
+            {deeDs.map((GIF, i) => (
+              <motion.div
+                key={GIF.id}
+                initial={{ opacity: 0, translateX: -50, translateY: -50 }}
+                animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+                transition={{ duration: 0.2, delay: i * 0.3 }}
+                className="hvr-float-shadow gif-card"
+              >
+                <img
+                  src={GIF.images.original.url}
+                  alt={GIF.title}
+                  className="gif"
+                />
+                <h4 className="gif-title">{GIF.title}</h4>
+                <Download GIF={GIF} />
+              </motion.div>
+            ))}
           </div>
         </>
       )}

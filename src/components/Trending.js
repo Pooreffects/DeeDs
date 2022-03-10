@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 const fetchTrending = async () => {
   const response = await fetch(
-    `https://api.giphy.com/v1/gifs/trending?api_key=${process.env.REACT_APP_API_KEY}&limit=24&q`
+    `https://api.giphy.com/v1/gifs/trending?api_key=${process.env.REACT_APP_API_KEY}&limit=36&q`
   );
   return response.json();
 };
@@ -21,31 +21,20 @@ function Trending() {
       {status === 'error' && <div>Error fetching data!</div>}
       {status === 'success' && (
         <div className="gifs-wrapper">
-          {data.data.map((GIF) => {
+          {data.data.map((GIF, i) => {
             return (
               <motion.div
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                variants={{
-                  initial: {
-                    opacity: 0,
-                    y: 100,
-                  },
-                  animate: {
-                    opacity: 1,
-                    y: 0,
-                  },
-                  exit: {
-                    opacity: 0,
-                    y: -100,
-                  },
-                }}
-                transition={{ transition: 'ease', duration: 0.8 }}
-                className="gif-card"
                 key={GIF.id}
+                initial={{ opacity: 0, translateX: -50, translateY: -50 }}
+                animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+                transition={{ duration: 0.2, delay: i * 0.3 }}
+                className="gif-card"
               >
-                <img className="gif" src={GIF.images.original.webp} alt="" />
+                <img
+                  src={GIF.images.original.webp}
+                  alt={GIF.title}
+                  className="gif"
+                />
                 <h4 className="gif-title">{GIF.title}</h4>
                 <Download GIF={GIF} />
               </motion.div>
