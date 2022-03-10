@@ -5,17 +5,6 @@ import '../styles/link.scss';
 import Download from './Download';
 import { motion } from 'framer-motion';
 
-const variants = {
-  initial: {
-    opacity: 0,
-    x: -100,
-  },
-  animate: {
-    opacity: 1,
-    x: 0,
-  },
-};
-
 function Gifs() {
   const [deeDs, setDeeDs] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -42,9 +31,14 @@ function Gifs() {
   return (
     <>
       <motion.div
-        initial="initial"
-        animate="animate"
-        variants={variants}
+        initial={{
+          opacity: 0,
+          x: -100,
+        }}
+        animate={{
+          opacity: 1,
+          x: 0,
+        }}
         transition={{ transition: 'easeOut', delay: 1, duration: 1 }}
         className="call-to-action-text"
       >
@@ -129,7 +123,11 @@ function Gifs() {
             {deeDs.map((GIF, i) => (
               <motion.div
                 key={GIF.id}
-                initial={{ opacity: 0, translateX: -50, translateY: -50 }}
+                initial={{
+                  opacity: 0,
+                  translateX: i % 2 === 0 ? -50 : 50,
+                  translateY: -50,
+                }}
                 animate={{ opacity: 1, translateX: 0, translateY: 0 }}
                 transition={{ duration: 0.2, delay: i * 0.3 }}
                 className="hvr-float-shadow gif-card"

@@ -25,7 +25,11 @@ function Trending() {
             return (
               <motion.div
                 key={GIF.id}
-                initial={{ opacity: 0, translateX: -50, translateY: -50 }}
+                initial={{
+                  opacity: 0,
+                  translateX: i % 2 === 0 ? -50 : 50,
+                  translateY: -50,
+                }}
                 animate={{ opacity: 1, translateX: 0, translateY: 0 }}
                 transition={{ duration: 0.2, delay: i * 0.3 }}
                 className="gif-card"
