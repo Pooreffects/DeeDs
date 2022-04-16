@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fe504ef3-1123-4689-9d6f-1ea045644cf0/deploy-status)](https://app.netlify.com/sites/deeds-and-troll/deploys)
+
 ### Notes and ToDos
 
 **_The recent activity_**:
