@@ -21,7 +21,7 @@ const SearchBar = ({
         },
       }}
       transition={{ transition: 'easeOut', duration: 1 }}
-      className="call-to-action"
+      className="container"
     >
       <input
         className="searchBar"
@@ -32,7 +32,7 @@ const SearchBar = ({
         onChange={(event) => setSearchTerm(event.target.value)}
         onKeyPress={handleKeyPress}
       />
-      <button className="btn" onClick={fetchGifs}>
+      <button className="searchBtn" onClick={fetchGifs}>
         Search
       </button>
     </motion.div>

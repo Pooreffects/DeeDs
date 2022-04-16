@@ -26,19 +26,21 @@ function Gifs() {
 
   return (
     <>
-      <div className="buttons">
-        <CtaButton
-          buttonTitle={'Trending'}
-          setPage={setPage}
-          initialX={-100}
-          animateX={100}
-        />
-        <CtaButton
-          buttonTitle={'Search'}
-          setPage={setPage}
-          initialX={100}
-          animateX={0}
-        />
+      <div className="call-to-action">
+        <div className="buttons">
+          <CtaButton
+            buttonTitle={'Trending'}
+            setPage={setPage}
+            initialX={-100}
+            animateX={0}
+          />
+          <CtaButton
+            buttonTitle={'Search'}
+            setPage={setPage}
+            initialX={100}
+            animateX={0}
+          />
+        </div>
       </div>
 
       {page === 'Trending' && <TrendingGifs />}
@@ -52,7 +54,7 @@ function Gifs() {
           />
           <div className="gifs-wrapper">
             {deeDs.map((GIF, i) => (
-              <SearchGifs key={GIF.id} i={i} />
+              <SearchGifs key={GIF.id} GIF={GIF} i={i} />
             ))}
           </div>
         </>

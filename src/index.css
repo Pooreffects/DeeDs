@@ -47,7 +47,7 @@ span > p {
   padding-top: 0.5rem;
 }
 
-.call-to-action {
+.container {
   text-align: center;
   display: flex;
   align-items: center;
@@ -56,7 +56,7 @@ span > p {
   width: 100%;
 }
 
-.call-to-action > button {
+.searchBtn {
   background-color: slateblue;
   padding: 0.4rem 0.5rem;
   margin-left: 1rem;
@@ -67,7 +67,7 @@ span > p {
   border-radius: 0.2rem;
 }
 
-.call-to-action > button:hover {
+.searchBtn:hover {
   color: whitesmoke; /* #4c4c4c */
   transition: 100ms ease-in;
 }
