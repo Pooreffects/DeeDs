@@ -21,7 +21,7 @@ function TrendingGifs() {
       {status === 'error' && <div>Error fetching data!</div>}
       {status === 'success' && (
         <div className="gifs-wrapper">
-          {data?.data.map((GIF, i) => {
+          {data.data?.map((GIF, i) => {
             return (
               <motion.div
                 key={GIF.id}
