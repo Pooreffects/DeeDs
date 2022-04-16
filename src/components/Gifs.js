@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Trending from './Trending';
 import SearchBar from './SearchBar';
 import '../styles/link.scss';
@@ -10,15 +10,10 @@ function Gifs() {
   const [searchTerm, setSearchTerm] = useState('');
   const [page, setPage] = useState();
 
-  useEffect(() => {
-    fetchGifs();
-  });
-
   async function fetchGifs() {
     let url = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&limit=36&q=${searchTerm}`;
     const response = await fetch(url);
     const result = await response.json();
-
     setDeeDs(result.data);
     setSearchTerm('');
   }
