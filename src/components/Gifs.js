@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Trending from './Trending';
 import SearchBar from './SearchBar';
 import '../styles/link.scss';
@@ -10,12 +10,13 @@ function Gifs() {
   const [searchTerm, setSearchTerm] = useState('');
   const [page, setPage] = useState();
 
-  // Fetch data using fetch API, maybe convert it to react-query later
+  useEffect(() => {
+    fetchGifs();
+  });
 
   async function fetchGifs() {
-    const response = await fetch(
-      `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&limit=36&q=${searchTerm}`
-    );
+    let url = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_API_KEY}&limit=36&q=${searchTerm}`;
+    const response = await fetch(url);
     const result = await response.json();
 
     setDeeDs(result.data);
@@ -30,25 +31,6 @@ function Gifs() {
 
   return (
     <>
-      <motion.div
-        initial={{
-          opacity: 0,
-          x: -100,
-        }}
-        animate={{
-          opacity: 1,
-          x: 0,
-        }}
-        transition={{ transition: 'easeOut', delay: 1, duration: 1 }}
-        className="call-to-action-text"
-      >
-        <p>
-          Pretty much the right place for goofy trolls like you and I <br />
-        </p>
-        <span>
-          <p>Explore some fun GIFs! 😄</p>
-        </span>
-      </motion.div>
       <div className="call-to-action">
         <div className="btn">
           <motion.button
