@@ -40,7 +40,7 @@ html {
   font: 2.6em var(--secondary-font);
 }
 
-.heading > h4 {
+.heading > h2 {
   font: 400 1.8em var(--primary-font);
   color: #1b1b1b;
 }
