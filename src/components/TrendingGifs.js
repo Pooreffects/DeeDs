@@ -4,16 +4,16 @@ import Download from './Download';
 import Loading from './Loading';
 import { motion } from 'framer-motion';
 
-const fetchTrending = async () => {
-  const response = await fetch(
-    `https://api.giphy.com/v1/gifs/trending?api_key=${process.env.REACT_APP_API_KEY}&limit=36&q`
-  );
-  return response.json();
-};
-
 function Trending() {
   // Fetch data using react-query
-  const { data, status } = useQuery('trending', fetchTrending);
+  const { data, status } = useQuery('trending', fetchData);
+
+  async function fetchData() {
+    const response = await fetch(
+      `https://api.giphy.com/v1/gifs/trending?api_key=${process.env.REACT_APP_API_KEY}&limit=36&q`
+    );
+    return response.json();
+  }
 
   return (
     <div>

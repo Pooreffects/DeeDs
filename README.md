@@ -16,13 +16,13 @@
 - [x] Create a fun favicon
 - [x] Lazyload GIFs, note: i've implemented it with [react-lazy](https://github.com/Aljullu/react-lazy-load-image-component)
 - [ ] Implement SEO best practices => [reference](https://www.toptal.com/react/react-seo-best-practices)
-- [ ] Refactor and extract a <GifCard /> on Trending and Gifs
-- [ ] Work on the responsiveness media queries file and brush up on the Net Ninja series
-- [ ] convert fetch searched GIFs to use React-query as well (analyze the diff between it & Fetch API)
-- [ ] Extract Styles in dedicated files, maybe even a SASS conversion, since it is installed
+- [x] Refactor and extract a <GifCard /> on Trending and Gifs
+- [x] Work on the responsiveness media queries file and brush up on the Net Ninja series
+- [x] Extract Styles in dedicated files, maybe even a SASS conversion, since it is installed
+- [x] Set different ways to fetch data using Fetch API and React-query
+- [ ] Add loadMore & HideSome functionalities
 - [ ] Deploy the application and try the performance in production
       (keep in mind => transition, animation, and overall app performance);
-- [ ] I might as well create a performant component library and push it npm
 
 ```
 * What's on my mind, when the app renders the content animates to the center, then
