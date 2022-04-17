@@ -17,29 +17,39 @@ html {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: thistle;
+  /* background-color: thistle; */
+  background: rgb(216, 191, 216);
+  background: linear-gradient(
+    180deg,
+    rgba(216, 191, 216, 1) 30%,
+    rgba(91, 33, 182, 0.7) 100%
+  );
+  height: 100%;
   max-width: 100%;
   overflow-x: hidden;
 }
 
 .heading {
   text-align: center;
-  font: 400 1.8em var(--primary-font);
-  color: #1b1b1b;
   padding: 1rem 3rem;
   margin-bottom: 1.5rem;
 }
 
-.heading > span {
+.heading > h1 {
   padding-right: 1rem;
   color: slateblue;
-  font: 2.5em var(--secondary-font);
+  font: 2.6em var(--secondary-font);
+}
+
+.heading > h4 {
+  font: 400 1.8em var(--primary-font);
+  color: #1b1b1b;
 }
 
 /* CALL TO ACTION STYLES */
 
 .call-to-action-text {
-  padding: 0 5rem;
+  padding: 0 3.5rem;
   margin-bottom: 2rem;
 }
 .call-to-action-text > p,
@@ -67,10 +77,10 @@ span > p {
   padding: 0.4rem 0.5rem;
   margin-left: 1rem;
   color: thistle;
-  font: 700 0.8em var(--primary-font);
+  font: 700 0.7em var(--primary-font);
   border: none;
   cursor: pointer;
-  border-radius: 0.2rem;
+  border-radius: 0.8rem;
 }
 
 .searchBtn:hover {
@@ -80,13 +90,16 @@ span > p {
 
 .searchBar {
   font: 400 0.9em var(--primary-font);
-  width: 20rem;
+  width: 17rem;
   background: inherit;
-  border: 2px solid #f38181;
+  border: none;
+  border-bottom: 2px solid rgba(216, 191, 216, 1);
   border-radius: 2rem;
   padding: 0.5rem;
+  padding-left: 1rem;
   opacity: 0.8;
   color: #1b1b1b;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
 }
 
 .searchBar:focus {
@@ -95,7 +108,7 @@ span > p {
 }
 
 ::placeholder {
-  padding-left: 1rem;
+  color: #4c4c4c;
 }
 
 /* Underline From Left */
@@ -268,12 +281,13 @@ span > p {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-items: center;
   grid-gap: 3rem;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .gif-card {
   padding: 1.9rem;
-  background-color: #8f8fbb;
+  background: rgba(91, 33, 182, 0.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5rem;
   display: flex;
   flex-direction: column;

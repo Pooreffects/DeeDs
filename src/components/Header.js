@@ -11,8 +11,8 @@ function Header() {
       className="app-header"
     >
       <h2 className="heading">
-        <span>DeeDs</span>
-        <h3>The Hub for the internet trolls</h3>
+        <h1>DeeDs</h1>
+        <h4>The Hub for the internet trolls</h4>
       </h2>
       <motion.div
         initial={{
