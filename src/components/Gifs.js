@@ -61,8 +61,8 @@ function Gifs() {
             fetchGifs={fetchGifs}
           />
           <div className="gifs-wrapper">
+            <Suspense fallback={<Loading />}>
             {deeDs?.map((GIF, i) => (
-              <Suspense fallback={<Loading />}>
                 <SearchGifs key={GIF.id} GIF={GIF} i={i} />
               </Suspense>
             ))}
