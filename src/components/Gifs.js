@@ -26,6 +26,8 @@ function Gifs() {
     }
   };
 
+  console.log(deeDs);
+
   return (
     <>
       <div className="call-to-action">

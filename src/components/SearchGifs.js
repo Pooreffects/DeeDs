@@ -14,7 +14,7 @@ function SearchGifs({ GIF, i }) {
       transition={{ duration: 0.2, delay: i * 0.3 }}
       className="hvr-float-shadow gif-card"
     >
-      <img src={GIF.images.original.url} alt={GIF.title} className="gif" />
+      <img src={GIF.images.original.webp} alt={GIF.title} className="gif" />
       <h4 className="gif-title">{GIF.title}</h4>
       <Download GIF={GIF} />
     </motion.div>
