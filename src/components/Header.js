@@ -12,7 +12,7 @@ function Header() {
     >
       <h2 className="heading">
         <h1>DeeDs</h1>
-        <h4>The Hub for the internet trolls</h4>
+        <h2>The Hub for the internet trolls</h2>
       </h2>
       <motion.div
         initial={{
