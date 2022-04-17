@@ -22,6 +22,7 @@
 - [x] Work on the responsiveness media queries file and brush up on the Net Ninja series
 - [x] Extract Styles in dedicated files, maybe even a SASS conversion, since it is installed
 - [x] Set different ways to fetch data using Fetch API and React-query
+- [x] Add env vars through netlify deployment UI
 - [ ] Add loadMore & HideSome functionalities
 - [ ] Deploy the application and try the performance in production
       (keep in mind => transition, animation, and overall app performance);
