@@ -53,7 +53,7 @@ function Gifs() {
             fetchGifs={fetchGifs}
           />
           <div className="gifs-wrapper">
-            {deeDs.map((GIF, i) => (
+            {deeDs?.map((GIF, i) => (
               <SearchGifs key={GIF.id} GIF={GIF} i={i} />
             ))}
           </div>

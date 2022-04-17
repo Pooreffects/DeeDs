@@ -4,7 +4,7 @@ import Download from './Download';
 import Loading from './Loading';
 import { motion } from 'framer-motion';
 
-function Trending() {
+function TrendingGifs() {
   // Fetch data using react-query
   const { data, status } = useQuery('trending', fetchData);
 
@@ -21,7 +21,7 @@ function Trending() {
       {status === 'error' && <div>Error fetching data!</div>}
       {status === 'success' && (
         <div className="gifs-wrapper">
-          {data.data.map((GIF, i) => {
+          {data?.data.map((GIF, i) => {
             return (
               <motion.div
                 key={GIF.id}
@@ -50,4 +50,4 @@ function Trending() {
   );
 }
 
-export default Trending;
+export default TrendingGifs;
