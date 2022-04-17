@@ -9,8 +9,9 @@
   padding: 0;
 }
 
-body, html {
-  margin: 0;
+body,
+html {
+  margin: 0 auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -22,10 +23,11 @@ body, html {
 }
 
 .heading {
+  text-align: center;
   font: 400 1.8em var(--primary-font);
   color: #1b1b1b;
-  padding: 1rem;
-  text-align: center;
+  padding: 1rem 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .heading > span {
@@ -37,13 +39,15 @@ body, html {
 /* CALL TO ACTION STYLES */
 
 .call-to-action-text {
+  padding: 0 7rem;
   margin-bottom: 2rem;
 }
 .call-to-action-text > p,
 span > p {
+  line-height: 32px;
   text-align: center;
   color: #1b1b1b;
-  font: 400 1em var(--primary-font);
+  font: 500 1em var(--primary-font);
 }
 span > p {
   padding-top: 0.5rem;
@@ -258,7 +262,7 @@ span > p {
 /* GIFs styles */
 
 .gifs-wrapper {
-  max-width: 90vw;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -268,7 +272,7 @@ span > p {
 }
 
 .gif-card {
-  padding: 2rem;
+  padding: 1.9rem;
   background-color: #8f8fbb;
   border-radius: 5rem;
   display: flex;
@@ -277,8 +281,8 @@ span > p {
 }
 
 .gif {
-  width: 300px;
-  height: 320px;
+  width: 280px;
+  height: 280px;
 }
 
 .gif-title {

@@ -12,7 +12,7 @@ function Header() {
     >
       <h2 className="heading">
         <span>DeeDs</span>
-        The Hub for the internet trolls
+        <h3>The Hub for the internet trolls</h3>
       </h2>
       <motion.div
         initial={{
@@ -26,9 +26,7 @@ function Header() {
         transition={{ transition: 'easeOut', delay: 1, duration: 1 }}
         className="call-to-action-text"
       >
-        <p>
-          Pretty much the right place for goofy trolls like you and I <br />
-        </p>
+        <p>Pretty much the right place for goofy trolls like you and myself</p>
         <span>
           <p>Explore some fun GIFs! 😄</p>
         </span>
