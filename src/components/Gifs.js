@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import TrendingGifs from './TrendingGifs';
+import React, { useState, Suspense } from 'react';
+import Loading from './Loading';
 import SearchBar from './SearchBar';
-import SearchGifs from './SearchGifs';
 import CtaButton from './CtaButton';
 import '../styles/link.scss';
+
+const TrendingGifs = React.lazy(() => import('./TrendingGifs'));
+const SearchGifs = React.lazy(() => import('./SearchGifs'));
 
 function Gifs() {
   const [deeDs, setDeeDs] = useState([]);
@@ -43,7 +45,11 @@ function Gifs() {
         </div>
       </div>
 
-      {page === 'Trending' && <TrendingGifs />}
+      {page === 'Trending' && (
+        <Suspense fallback={<Loading />}>
+          <TrendingGifs />
+        </Suspense>
+      )}
       {page === 'Search' && (
         <>
           <SearchBar
@@ -54,7 +60,9 @@ function Gifs() {
           />
           <div className="gifs-wrapper">
             {deeDs?.map((GIF, i) => (
-              <SearchGifs key={GIF.id} GIF={GIF} i={i} />
+              <Suspense fallback={<Loading />}>
+                <SearchGifs key={GIF.id} GIF={GIF} i={i} />
+              </Suspense>
             ))}
           </div>
         </>
