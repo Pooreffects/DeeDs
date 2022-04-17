@@ -128,8 +128,8 @@ span > p {
   left: 0;
   right: 100%;
   bottom: 0;
-  background: slateblue;
-  height: 3px;
+  background: rgb(119, 104, 216);
+  height: 2px;
   -webkit-transition-property: right;
   transition-property: right;
   -webkit-transition-duration: 0.3s;
@@ -316,7 +316,7 @@ span > p {
   align-items: center;
   cursor: pointer;
   justify-content: space-between;
-  background-color: #bfbfd8;
+  background-color: #c7aad3;
   border-radius: 0.4rem;
 }
 

@@ -10,14 +10,15 @@
   position: relative;
   cursor: pointer;
   .link {
-    background-color: #bfbfd8;
-    font-size: 1em;
+    background-color: inherit;
+    font-size: 0.9em;
     font-weight: 500;
     font-family: 'Montserrat', sans-serif;
     color: #1b1b1b;
     position: relative;
     transition: all 0.3s ease-in-out;
     border-radius: 0.3rem;
+    border: none;
     margin: 0;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 16px 0 rgba(0, 0, 0, 0.19);
 
